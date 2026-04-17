@@ -11,8 +11,9 @@
     color: rgb(0, 0, 0);
 }
 .btns{
-    display: grid;
+    display: flex;
     gap: 1rem;
+    
 }
 .btns button{
     background: rgb(99, 8, 255);
@@ -20,4 +21,5 @@
     font-size: 18px;
     border: none;
     color: white;
+    /* max-width: 30rem; */
 }

@@ -1,7 +1,23 @@
 import React from 'react';
 import './App.css'
+import axios from 'axios'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const App = () => {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    axios.get('http://3.111.197.201/api/test')
+      .then(response => {
+        console.log("Api response from backend", response.data);
+        setData(response.data.message);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
   return (
     <div className='page'>
       <h1 className='head'>Welcome to my Application</h1>
@@ -15,6 +31,8 @@ const App = () => {
         <button>Explore Now</button>
         <button>Contact US</button>
       </div>
+
+      <h2>Backend Data: {data}</h2>
     </div>
   );
 }
