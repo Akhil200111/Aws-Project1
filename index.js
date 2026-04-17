@@ -8,6 +8,13 @@ app.get('/', (req, res) => {
     res.send("Backend Home Page is Running....");
 });
 
+app.get('/api/test', () => {
+    res.json({
+        message: "API is working fine",
+        status: "success",
+    })
+})
+
 app.listen(5000,'0.0.0.0', () => {
     console.log("Backend is running on port : 5000");
 })
