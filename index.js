@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
     res.send("Backend Home Page is Running....");
 });
 
-app.get('/api/test', () => {
+app.get('/api/test', (req, res) => {
     res.json({
         message: "API is working fine",
         status: "success",
